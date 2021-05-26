@@ -7,8 +7,8 @@
 #define Q D5
 #define E D6
 
-#define SSID ""
-#define SENHA ""
+#define SSID "JUVISRONET"
+#define SENHA "50214514"
 
 ESP8266WebServer servidor;
 
