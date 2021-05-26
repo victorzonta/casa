@@ -82,7 +82,7 @@ char Casa[] PROGMEM = R"=====(
             request.send();
         }
 
-        const quarto = document.getElementById("quarto");
+        const btnquarto = document.getElementById("quarto");
         btnquarto.addEventListener("click", function(){requisita(btnquarto)});
         let btnquartooff = document.getElementById("quartooff");
         btnquartooff.addEventListener("click", function(){requisita(btnquartooff)});
