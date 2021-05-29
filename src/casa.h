@@ -27,6 +27,9 @@ char Casa[] PROGMEM = R"=====(
         background-color:#000;
         color: white;
     }
+    #portao{
+        background-color:#fff;
+    }
     #garagem{
         background-color:#fff;
     }
@@ -61,7 +64,8 @@ char Casa[] PROGMEM = R"=====(
     <h1> ligue o comodo da casa </h1>
     <div class = "cores">      
         <button id = "quarto">quarto</button>   
-        <button id = "quartooff">quartooff</button>   
+        <button id = "quartooff">quartooff</button> 
+        <button id = "portao" >portao</button>  
         <button id = "garagem">garagem</button>   
         <button id = "garagemoff">garagemoff</button>  
         <button id = "escritorio">escritorio</button>
@@ -86,6 +90,8 @@ char Casa[] PROGMEM = R"=====(
         btnquarto.addEventListener("click", function(){requisita(btnquarto)});
         let btnquartooff = document.getElementById("quartooff");
         btnquartooff.addEventListener("click", function(){requisita(btnquartooff)});
+        let btnportao = document.getElementById("portao");
+        btnportao.addEventListener("click", function(){requisita(btnportao)});
         let btngaragem = document.getElementById("garagem");
         btngaragem.addEventListener("click", function(){requisita(btngaragem)});
         let btngaragemoff= document.getElementById("garagemoff");

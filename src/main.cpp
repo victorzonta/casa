@@ -1,5 +1,6 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
+#include <Servo.h>
 #include "Casa.h"
 
 #define S D4 
@@ -7,16 +8,24 @@
 #define Q D5
 #define E D6
 
+Servo servo_motor;
+
 #define SSID "JUVISRONET"
 #define SENHA "50214514"
 
 ESP8266WebServer servidor;
+
 
 void quarto(){
   digitalWrite(Q, HIGH);
 }
 void quartooff(){
   digitalWrite(Q, LOW);
+}
+void portao(){
+  servo_motor.write(90);
+  delay(10000);
+  servo_motor.write(190);
 }
 void garagem(){
   digitalWrite(G, HIGH);
@@ -55,6 +64,7 @@ void setup() {
  pinMode(G,OUTPUT);
  pinMode(Q,OUTPUT);
  pinMode(E,OUTPUT);
+ servo_motor.attach(D7);
 
  WiFi.begin(SSID,SENHA);
 Serial.begin(115200);
@@ -70,6 +80,7 @@ Serial.println(WiFi.localIP());//Ip onde tenho que me conectar
 
 servidor.on("/quarto",quarto);
 servidor.on("/quartooff",quartooff);
+servidor.on("/portao",portao);
 servidor.on("/garagem",garagem);
 servidor.on("/garagemoff",garagemoff);
 servidor.on("/escritorio",escritorio);
