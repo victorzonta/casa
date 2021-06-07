@@ -23,9 +23,9 @@ void quartooff(){
   digitalWrite(Q, LOW);
 }
 void portao(){
-  servo_motor.write(90);
+  servo_motor.write(0);
   delay(10000);
-  servo_motor.write(190);
+  servo_motor.write(180);
 }
 void garagem(){
   digitalWrite(G, HIGH);
